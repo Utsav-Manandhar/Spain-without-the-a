@@ -231,7 +231,6 @@ class CubeMesh:
         self.vertices = np.array(self.vertices, dtype=np.float32)
 
         self.vertex_count = len(self.vertices)//6
-        print(self.vertex_count)
         self.vao = glGenVertexArrays(1) #vertex array object
         glBindVertexArray(self.vao)
 
@@ -239,7 +238,7 @@ class CubeMesh:
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
 
         glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices, GL_STATIC_DRAW)
-        print(self.vertices.nbytes//4)
+
 
         
         
