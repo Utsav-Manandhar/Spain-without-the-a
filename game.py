@@ -26,7 +26,7 @@ class App:
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
         #creating shader
-        self.shader = self.createShader('shaders/vertex.txt','shaders/fragment.txt')
+        self.shader = self.createShader('Spain-without-the-a/shaders/vertex.txt','Spain-without-the-a/shaders/fragment.txt')
         glUseProgram(self.shader)
         glUniform1i(glGetUniformLocation(self.shader, "imageTexture"), 0)
 
@@ -172,58 +172,58 @@ class CubeMesh:
         self.vertices = (
             #front face
             -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
-             0.3, -0.3, -0.3, 0.0, 1.0, 0.0, #BottomRightFront green
+             0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomRightFront cyan
              0.3,  0.3, -0.3, 0.0, 0.0, 1.0, #TopRightFront blue
              
              0.3,  0.3, -0.3, 0.0, 0.0, 1.0, #TopRightFront blue
-            -0.3,  0.3, -0.3, 0.0, 1.0, 1.0, #TopLeftFront cyan
+            -0.3,  0.3, -0.3, 0.0, 1.0, 0.0, #TopLeftFront green
             -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
 
             #left face
             -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
             -0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomLeftBack cyan
-            -0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopLeftBack yellow
+            -0.3,  0.3, 0.3, 0.0, 0.0, 1.0, #TopLeftBack blue
              
-            -0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopLeftBack yellow
-            -0.3,  0.3, -0.3, 0.0, 1.0, 1.0, #TopLeftFront cyan
+            -0.3,  0.3, 0.3, 0.0, 0.0, 1.0, #TopLeftBack blue
+            -0.3,  0.3, -0.3, 0.0, 1.0, 0.0, #TopLeftFront green
             -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
 
             # back face
             -0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomLeftBack cyan
-             0.3, -0.3, 0.3, 0.0, 1.0, 0.0, #BottomRightBack blue
-             0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopRightBack yellow
+             0.3, -0.3, 0.3, 1.0, 1.0, 0.0, #BottomRightBack yellow
+             0.3,  0.3, 0.3, 0.0, 1.0, 0.0, #TopRightBack green
 
              0.3,  0.3, 0.3, 0.0, 1.0, 0.0, #TopRightBack green
-            -0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopLeftBack yellow
+            -0.3,  0.3, 0.3, 0.0, 0.0, 1.0, #TopLeftBack blue
             -0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomLeftBack cyan
 
             #right face 
 
-             0.3, -0.3, -0.3, 0.0, 1.0, 0.0, #BottomRightFront green
-             0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomRightBack cyan
-             0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopRightBack yellow
+             0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomRightFront cyan
+             0.3, -0.3, 0.3, 1.0, 1.0, 0.0, #BottomRightBack yellow
+             0.3,  0.3, 0.3, 0.0, 1.0, 0.0, #TopRightBack green
              
-             0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopRightBack yellow
+             0.3,  0.3, 0.3, 0.0, 1.0, 0.0, #TopRightBack green
              0.3,  0.3, -0.3, 0.0, 0.0, 1.0, #TopRightFront blue
-             0.3, -0.3, -0.3, 0.0, 1.0, 0.0, #BottomRightFront green
+             0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomRightFront cyan
 
             #top face
-             0.3,  0.3, -0.3, 0.0, 0.0, 1.0, #TopRightFront blue
-             0.3,  0.3, 0.3, 1.0, 1.0, 0.0, #TopRightBack yellow
+             0.3,  0.3, -0.3, 0.0, 1.0, 1.0, #TopRightFront cyan
+             0.3,  0.3, 0.3, 0.0, 1.0, 1.0, #TopRightBack cyan
             -0.3,  0.3, -0.3, 0.0, 1.0, 1.0, #TopLeftFront cyan
              
             -0.3,  0.3, -0.3, 0.0, 1.0, 1.0, #TopLeftFront cyan
-            -0.3,  0.3, 0.3, 0.0, 0.0, 1.0, #TopLeftBack blue
-             0.3,  0.3, -0.3, 0.0, 0.0, 1.0, #TopRightFront blue
+            -0.3,  0.3, 0.3, 0.0, 1.0, 1.0, #TopLeftBack cyan
+             0.3,  0.3, 0.3, 0.0, 1.0, 1.0, #TopRightBack cyan
 
             #bottom face
-             0.3, -0.3, -0.3, 0.0, 1.0, 0.0, #BottomRightFront green
+             0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomRightFront cyan
              0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomRightBack cyan
-            -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
+            -0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomLeftFront cyan
 
-            -0.3, -0.3, -0.3, 1.0, 1.0, 0.0, #BottomLeftFront yellow
-            -0.3, -0.3, 0.3, 0.0, 1.0, 0.0, #BottomLeftBack green
-             0.3, -0.3, -0.3, 0.0, 1.0, 0.0, #BottomRightFront green
+            -0.3, -0.3, -0.3, 0.0, 1.0, 1.0, #BottomLeftFront cyan
+            -0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomLeftBack cyan
+             0.3, -0.3, 0.3, 0.0, 1.0, 1.0, #BottomRightBack cyan
 
 
         )
@@ -231,6 +231,7 @@ class CubeMesh:
         self.vertices = np.array(self.vertices, dtype=np.float32)
 
         self.vertex_count = len(self.vertices)//6
+        print(self.vertex_count)
         self.vao = glGenVertexArrays(1) #vertex array object
         glBindVertexArray(self.vao)
 
@@ -238,7 +239,7 @@ class CubeMesh:
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
 
         glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices, GL_STATIC_DRAW)
-
+        print(self.vertices.nbytes//4)
 
         
         
