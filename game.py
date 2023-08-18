@@ -3,6 +3,7 @@ from OpenGL.GL import *
 import numpy as np
 from OpenGL.GL.shaders import compileProgram, compileShader
 import pyrr
+import os
 
 screenWidth = 1540
 screenHeight = 780
@@ -25,8 +26,8 @@ class App:
         glEnable(GL_DEPTH_TEST)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
-        #creating shader
-        self.shader = self.createShader('Spain-without-the-a/shaders/vertex.txt','Spain-without-the-a/shaders/fragment.txt')
+
+        self.shader = self.createShader(os.path.join(os.path.dirname(__file__),"shaders/vertex.txt"),os.path.join(os.path.dirname(__file__),"shaders/fragment.txt"))
         glUseProgram(self.shader)
         glUniform1i(glGetUniformLocation(self.shader, "imageTexture"), 0)
 
@@ -231,7 +232,6 @@ class CubeMesh:
         self.vertices = np.array(self.vertices, dtype=np.float32)
 
         self.vertex_count = len(self.vertices)//6
-        print(self.vertex_count)
         self.vao = glGenVertexArrays(1) #vertex array object
         glBindVertexArray(self.vao)
 
@@ -239,7 +239,7 @@ class CubeMesh:
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
 
         glBufferData(GL_ARRAY_BUFFER, self.vertices.nbytes, self.vertices, GL_STATIC_DRAW)
-        print(self.vertices.nbytes//4)
+
 
         
         
